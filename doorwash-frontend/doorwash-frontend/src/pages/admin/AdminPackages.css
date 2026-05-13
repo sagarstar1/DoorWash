@@ -1,0 +1,103 @@
+.admin-pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.admin-pkg-skeleton {
+  height: 260px;
+  background: linear-gradient(90deg, var(--gray-8) 25%, var(--gray-7) 50%, var(--gray-8) 75%);
+  background-size: 200% 100%;
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.admin-pkg-card {
+  background: var(--white);
+  border: 1px solid var(--gray-7);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all var(--transition);
+}
+.admin-pkg-card:hover { border-color: var(--gray-5); box-shadow: var(--shadow-sm); }
+.admin-pkg-card--inactive { opacity: 0.55; }
+
+.admin-pkg-card-top { display: flex; align-items: center; justify-content: space-between; }
+.admin-pkg-tier { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.admin-pkg-inactive-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-full); background: rgba(239,68,68,0.1); color: #DC2626; }
+
+.admin-pkg-name { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--black); }
+.admin-pkg-price { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--black); letter-spacing: -0.03em; }
+.admin-pkg-desc { font-size: 13px; color: var(--gray-4); line-height: 1.5; flex: 1; }
+.admin-pkg-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.admin-pkg-tag { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: var(--radius-full); background: var(--gray-8); color: var(--gray-3); border: 1px solid var(--gray-7); }
+.admin-pkg-tag--sub { background: rgba(200,240,74,0.1); color: #6b8a00; border-color: rgba(200,240,74,0.3); }
+.admin-pkg-actions { display: flex; gap: 8px; margin-top: 4px; }
+
+/* Modal */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.admin-modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalIn 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes modalIn { from { opacity:0; transform:scale(0.96) translateY(16px); } to { opacity:1; transform:scale(1) translateY(0); } }
+
+.admin-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--gray-7);
+}
+.admin-modal-header h2 { font-family: var(--font-heading); font-size: 19px; font-weight: 700; color: var(--black); }
+.admin-modal-close { font-size: 18px; color: var(--gray-5); cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: all var(--transition); background: none; border: none; }
+.admin-modal-close:hover { background: var(--gray-8); color: var(--black); }
+
+.admin-modal-body { padding: 24px 28px; display: flex; flex-direction: column; gap: 16px; }
+.admin-modal-field { display: flex; flex-direction: column; gap: 6px; }
+.admin-modal-field label { font-size: 13px; font-weight: 500; color: var(--gray-3); }
+.admin-modal-field input, .admin-modal-field select, .admin-modal-field textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--gray-6);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--black);
+  background: var(--white);
+  outline: none;
+  font-family: var(--font-body);
+  transition: border-color var(--transition);
+  resize: vertical;
+}
+.admin-modal-field input:focus, .admin-modal-field select:focus, .admin-modal-field textarea:focus { border-color: var(--black); }
+.admin-modal-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.admin-modal-check { justify-content: center; }
+.admin-modal-check label { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.admin-modal-check input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; }
+
+.admin-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px 28px 24px;
+  border-top: 1px solid var(--gray-7);
+}

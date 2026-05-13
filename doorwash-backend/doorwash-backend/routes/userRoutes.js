@@ -1,0 +1,11 @@
+const express = require("express");
+const r = express.Router();
+const C = require("../controllers/combinedControllers");
+const { protect, authorize } = require("../middleware/auth");
+r.use(protect, authorize("customer"));
+r.get("/profile",               C.getProfile);
+r.put("/profile",               C.updateProfile);
+r.post("/address",              C.addAddress);
+r.delete("/address/:addressId", C.deleteAddress);
+r.get("/loyalty",               C.getLoyaltyPoints);
+module.exports = r;

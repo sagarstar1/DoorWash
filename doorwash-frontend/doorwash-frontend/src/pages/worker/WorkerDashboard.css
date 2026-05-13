@@ -1,0 +1,16 @@
+.worker-dash { max-width: 800px; display: flex; flex-direction: column; gap: 20px; }
+.worker-dash__header { background: var(--black); border-radius: var(--radius-lg); padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.worker-dash__title { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.worker-dash__sub { font-size: 14px; color: var(--gray-5); }
+.worker-dash__controls { display: flex; gap: 10px; align-items: center; }
+.worker-dash__location-btn { display: flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: 13px; font-weight: 500; padding: 9px 16px; border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); background: transparent; cursor: pointer; transition: all var(--transition); }
+.worker-dash__location-btn:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+.worker-dash__toggle { display: flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 14px; font-weight: 600; padding: 9px 20px; border-radius: var(--radius-full); border: 2px solid rgba(255,255,255,0.15); color: var(--gray-5); background: transparent; cursor: pointer; transition: all var(--transition); }
+.worker-dash__toggle.active { border-color: var(--accent); color: var(--accent); }
+.worker-dash__toggle-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-4); transition: background var(--transition); }
+.worker-dash__toggle.active .worker-dash__toggle-dot { background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+.worker-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.worker-stat { background: var(--white); border: 1px solid var(--gray-7); border-radius: var(--radius-md); padding: 20px; }
+.worker-stat__label { display: block; font-size: 12px; color: var(--gray-5); margin-bottom: 8px; }
+.worker-stat__val { display: block; font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--black); letter-spacing: -0.02em; }
+@media (max-width: 640px) { .worker-stats { grid-template-columns: repeat(2,1fr); } }

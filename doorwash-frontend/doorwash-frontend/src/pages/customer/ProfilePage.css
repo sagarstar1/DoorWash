@@ -1,0 +1,35 @@
+.profile { max-width: 600px; display: flex; flex-direction: column; gap: 20px; }
+
+.profile__card { background: var(--black); border-radius: var(--radius-lg); padding: 28px; display: flex; align-items: center; gap: 20px; }
+.profile__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--black); font-family: var(--font-heading); font-size: 28px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.profile__name { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--white); }
+.profile__email { font-size: 13px; color: var(--gray-5); margin-top: 3px; }
+.profile__loyalty { font-size: 13px; color: var(--gray-5); margin-top: 6px; }
+.profile__loyalty-pts { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--accent); }
+
+.profile__section { background: var(--white); border: 1px solid var(--gray-7); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.profile__section-header { display: flex; align-items: center; justify-content: space-between; }
+.profile__section-title { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--black); }
+
+.profile__field { display: flex; flex-direction: column; gap: 6px; }
+.profile__field label { font-size: 13px; font-weight: 500; color: var(--gray-3); }
+.profile__field input, .profile__field select { padding: 10px 14px; border: 1px solid var(--gray-6); border-radius: var(--radius-md); font-size: 14px; color: var(--black); background: var(--white); outline: none; font-family: var(--font-body); transition: border-color var(--transition); }
+.profile__field input:focus, .profile__field select:focus { border-color: var(--black); }
+.profile__field input:disabled { background: var(--gray-8); color: var(--gray-5); cursor: not-allowed; }
+.profile__field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.profile__save { align-self: flex-end; background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: var(--radius-md); border: none; cursor: pointer; transition: all var(--transition); }
+.profile__save:hover:not(:disabled) { background: var(--gray-2); }
+.profile__save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.profile__add-btn { font-family: var(--font-body); font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: var(--radius-md); border: 1px solid var(--gray-6); background: transparent; color: var(--gray-3); cursor: pointer; transition: all var(--transition); }
+.profile__add-btn:hover { border-color: var(--black); color: var(--black); }
+
+.profile__add-vehicle { background: var(--gray-8); border-radius: var(--radius-md); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.profile__add-vehicle-btns { display: flex; gap: 10px; justify-content: flex-end; }
+.profile__cancel-btn { font-family: var(--font-body); font-size: 13px; padding: 8px 16px; border-radius: var(--radius-md); border: 1px solid var(--gray-6); background: transparent; color: var(--gray-4); cursor: pointer; }
+
+.profile__vehicle { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: var(--gray-8); border-radius: var(--radius-md); }
+.profile__vehicle-icon { width: 40px; height: 40px; background: var(--black); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.profile__vehicle-name { font-size: 14px; font-weight: 600; color: var(--black); }
+.profile__vehicle-meta { font-size: 12px; color: var(--gray-5); margin-top: 2px; }

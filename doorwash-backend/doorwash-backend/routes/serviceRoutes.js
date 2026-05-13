@@ -1,0 +1,10 @@
+const express = require("express");
+const r = express.Router();
+const C = require("../controllers/combinedControllers");
+const { protect, authorize } = require("../middleware/auth");
+r.get("/",       C.getAllServices);
+r.get("/:id",    C.getService);
+r.post("/",      protect, authorize("admin"), C.createService);
+r.put("/:id",    protect, authorize("admin"), C.updateService);
+r.delete("/:id", protect, authorize("admin"), C.deleteService);
+module.exports = r;

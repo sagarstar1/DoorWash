@@ -1,0 +1,293 @@
+.packages-page { min-height: 100vh; background: var(--white); }
+
+.packages-page__hero {
+  background: var(--black);
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.packages-page__title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin: 16px 0 12px;
+}
+
+.packages-page__sub {
+  font-size: 16px;
+  color: var(--gray-5);
+  max-width: 440px;
+  margin: 0 auto 36px;
+}
+
+.packages-page__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover { border-color: rgba(255,255,255,0.35); color: var(--white); }
+
+.filter-btn--active {
+  background: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.packages-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.packages-page__loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.pkg-skeleton {
+  height: 380px;
+  background: linear-gradient(90deg, var(--gray-8) 25%, var(--gray-7) 50%, var(--gray-8) 75%);
+  background-size: 200% 100%;
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.pkg-full-card {
+  background: var(--white);
+  border: 1px solid var(--gray-7);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  position: relative;
+  transition: all var(--transition);
+}
+
+.pkg-full-card:hover {
+  border-color: var(--gray-5);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.pkg-full-card--luxury {
+  background: var(--black);
+  border-color: rgba(255,215,0,0.2);
+}
+
+.pkg-full-card--luxury:hover {
+  border-color: rgba(255,215,0,0.4);
+  box-shadow: 0 12px 40px rgba(255,215,0,0.1);
+}
+
+.pkg-full-card--luxury .pkg-full-card__name,
+.pkg-full-card--luxury .pkg-full-card__price { color: var(--white); }
+.pkg-full-card--luxury .pkg-full-card__desc { color: var(--gray-5); }
+.pkg-full-card--luxury .pkg-full-card__features li { color: rgba(255,255,255,0.7); }
+
+.pkg-full-card__badge {
+  position: absolute;
+  top: -1px; left: 32px;
+  background: var(--accent);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pkg-full-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.pkg-full-card__tier {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pkg-full-card__name {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.02em;
+}
+
+.pkg-full-card__price-block { text-align: right; }
+
+.pkg-full-card__price {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.03em;
+}
+
+.pkg-full-card__time {
+  font-size: 13px;
+  color: var(--gray-5);
+}
+
+.pkg-full-card__desc {
+  font-size: 14px;
+  color: var(--gray-4);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.pkg-full-card__vehicles {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.vehicle-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--gray-8);
+  color: var(--gray-3);
+  text-transform: capitalize;
+  border: 1px solid var(--gray-7);
+}
+
+.pkg-full-card--luxury .vehicle-tag {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.pkg-full-card__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-7);
+}
+
+.pkg-full-card--luxury .pkg-full-card__features {
+  border-top-color: rgba(255,255,255,0.08);
+}
+
+.pkg-full-card__features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gray-3);
+}
+
+.pkg-full-card__discount {
+  font-size: 13px;
+  color: var(--accent);
+  background: rgba(200,240,74,0.1);
+  border: 1px solid rgba(200,240,74,0.2);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.pkg-full-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.pkg-full-card__cta:hover {
+  background: var(--gray-2);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.pkg-full-card--luxury .pkg-full-card__cta {
+  background: var(--accent);
+  color: var(--black);
+}
+
+.pkg-full-card--luxury .pkg-full-card__cta:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 4px 20px rgba(200,240,74,0.3);
+}
+
+@media (max-width: 640px) {
+  .packages-page__grid { grid-template-columns: 1fr; }
+}
+
+.packages-page__empty {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--gray-5);
+  font-size: 15px;
+}
+
+.pkg-full-card--premium {
+  border-color: rgba(200,240,74,0.2);
+}
+.pkg-full-card--premium:hover {
+  border-color: rgba(200,240,74,0.4);
+  box-shadow: 0 8px 32px rgba(200,240,74,0.08);
+}
+
+.pkg-full-card__discount-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: #EF4444;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+}
+
+.pkg-full-card__signin-note {
+  text-align: center;
+  font-size: 11px;
+  color: var(--gray-2);
+  margin-top: 9px;
+  padding-top: 9px;
+}

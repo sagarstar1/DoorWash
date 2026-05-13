@@ -1,0 +1,70 @@
+.admin-loading { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.admin-skeleton { height: 100px; background: linear-gradient(90deg,var(--gray-8) 25%,var(--gray-7) 50%,var(--gray-8) 75%); background-size: 200% 100%; border-radius: var(--radius-md); animation: shimmer 1.4s ease-in-out infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.admin-dash { display: flex; flex-direction: column; gap: 20px; }
+
+.admin-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+
+.admin-stat {
+  background: var(--white);
+  border: 1px solid var(--gray-7);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  position: relative;
+}
+.admin-stat--alert { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.03); }
+
+.admin-stat__label { display: block; font-size: 12px; color: var(--gray-5); margin-bottom: 8px; }
+.admin-stat__val { display: block; font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--black); letter-spacing: -0.03em; }
+.admin-stat__trend { position: absolute; top: 18px; right: 18px; font-size: 11px; font-weight: 600; color: #10B981; background: rgba(16,185,129,0.1); padding: 2px 7px; border-radius: var(--radius-full); }
+.admin-stat__alert-badge { display: block; font-size: 10px; font-weight: 600; color: #DC2626; margin-top: 4px; }
+
+.admin-charts { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+
+.admin-chart-card { background: var(--white); border: 1px solid var(--gray-7); border-radius: var(--radius-lg); padding: 22px 24px; }
+.admin-chart-title { font-family: var(--font-heading); font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 18px; }
+
+.admin-pie-wrap { display: flex; align-items: center; gap: 16px; }
+
+.admin-pie-legend { display: flex; flex-direction: column; gap: 8px; }
+.admin-pie-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--gray-4); }
+.admin-pie-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.admin-pie-count { margin-left: auto; font-weight: 600; color: var(--black); }
+
+.admin-quick-links { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+
+.admin-ql {
+  background: var(--white);
+  border: 1px solid var(--gray-7);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all var(--transition);
+}
+.admin-ql:hover { border-color: var(--gray-4); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+
+.admin-ql__label { font-size: 13px; font-weight: 500; color: var(--black); }
+.admin-ql__count { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--black); }
+.admin-ql__count--alert { color: #DC2626; }
+.admin-ql svg { margin-top: auto; color: var(--gray-5); }
+
+.admin-card { background: var(--white); border: 1px solid var(--gray-7); border-radius: var(--radius-lg); padding: 24px; }
+.admin-card-title { font-family: var(--font-heading); font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 18px; }
+
+.admin-workers-list { display: flex; flex-direction: column; gap: 10px; }
+.admin-worker-row { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--gray-8); border-radius: var(--radius-md); }
+.admin-worker-rank { font-family: var(--font-heading); font-size: 13px; font-weight: 700; color: var(--gray-5); width: 24px; }
+.admin-worker-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--black); color: var(--accent); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.admin-worker-name { font-size: 14px; font-weight: 500; color: var(--black); }
+.admin-worker-meta { font-size: 12px; color: var(--gray-5); margin-top: 1px; }
+.admin-worker-rating { margin-left: auto; font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--black); }
+.admin-worker-rating span { color: var(--accent); }
+
+@media (max-width: 960px) {
+  .admin-stats { grid-template-columns: repeat(2,1fr); }
+  .admin-charts { grid-template-columns: 1fr; }
+  .admin-quick-links { grid-template-columns: repeat(2,1fr); }
+}
