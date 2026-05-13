@@ -38,7 +38,10 @@ app.set('io', io); // Available in req.app.get('io') in controllers
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [
+    "http://localhost:3000",
+    "https://doorwash9-51c6l7t4f-sagarpapta00-8610s-projects.vercel.app"
+  ],
   credentials: true,
 }));
 app.use(express.json());
