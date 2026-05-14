@@ -10,17 +10,24 @@ export function SocketProvider({ children }) {
   const socketRef = useRef(null);
   const [connected, setConnected] = useState(false);
 
-  useEffect(() => {
-    if (!user) return;
-    const token = localStorage.getItem('doorwash_token');
-    socketRef.current = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000', {
+useEffect(() => {
+  if (!user) return;
+
+  const token = localStorage.getItem('doorwash_token');
+
+  socketRef.current = io(
+    import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000',
+    {
       auth: { token },
       transports: ['websocket'],
-    });
-    socketRef.current.on('connect', () => setConnected(true));
-    socketRef.current.on('disconnect', () => setConnected(false));
-    return () => socketRef.current?.disconnect();
-  }, [user]);
+    }
+  );
+
+  socketRef.current.on('connect', () => setConnected(true));
+  socketRef.current.on('disconnect', () => setConnected(false));
+
+  return () => socketRef.current?.disconnect();
+}, [user]);
 
   const joinBooking = (id) => socketRef.current?.emit('join_booking', id);
   const leaveBooking = (id) => socketRef.current?.emit('leave_booking', id);
