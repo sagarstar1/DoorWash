@@ -16,7 +16,7 @@ useEffect(() => {
   const token = localStorage.getItem('doorwash_token');
 
   socketRef.current = io(
-    import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000',
+    'https://doorwash.onrender.com',
     {
       auth: { token },
       transports: ['websocket'],
